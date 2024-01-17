@@ -1,0 +1,9 @@
+matplotlib
+numpy
+pyserial
+tqdm
+PyQt5
+pyvisa
+pyvisa-py
+psutil
+zeroconf

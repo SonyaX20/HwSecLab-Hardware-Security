@@ -1,0 +1,12 @@
+SUBSYSTEM=="usb",        ATTR{idProduct}=="04ce", ATTR{idVendor}=="1ab1", ACTION=="add", GROUP="usbraw", MODE="0666"
+SUBSYSTEM=="usb_device", ATTR{idProduct}=="04ce", ATTR{idVendor}=="1ab1", ACTION=="add", GROUP="usbraw", MODE="0666"
+SUBSYSTEM=="usb",        ATTR{idProduct}=="04b1", ATTR{idVendor}=="1ab1", ACTION=="add", GROUP="usbraw", MODE="0666"
+SUBSYSTEM=="usb_device", ATTR{idProduct}=="04b1", ATTR{idVendor}=="1ab1", ACTION=="add", GROUP="usbraw", MODE="0666"
+
+# Rigol Technologies DS1502D series
+SUBSYSTEMS=="usb", ACTION=="add", ATTR{idVendor}=="1ab1", ATTR{idProduct}=="0588", GROUP="usbusers", MODE="0660"
+SUBSYSTEMS=="usb", ACTION=="add", ATTR{idVendor}=="1ab1", ATTR{idProduct}=="04b0", GROUP="usbusers", MODE="0660"
+
+# Devices
+KERNEL=="usbtmc/*",     MODE="0660", GROUP="usbusers"
+KERNEL=="usbtmc[0-9]*", MODE="0660", GROUP="usbusers"

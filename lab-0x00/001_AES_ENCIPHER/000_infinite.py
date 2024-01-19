@@ -37,7 +37,7 @@ def generate_random_plaintext():
                     
 if __name__ == "__main__":
     N = 10  # Adjust the value of N as needed
-    encipher = EncipherAPI(port='/dev/tty.usbmodem14101')  # Change port as needed
+    encipher = EncipherAPI(port='COM3')  # Change port as needed
     
     # Assuming the scope setup is done outside of this script
     # Make sure the vertical resolution, horizontal resolution, and trigger setup are configured correctly

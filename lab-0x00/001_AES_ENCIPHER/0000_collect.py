@@ -33,7 +33,7 @@ def collect_power_traces(encipher, scope, N):
         encipher.encrypt()
 
         # Wait until the scope gets triggered
-        while scope.triggered():
+        while not scope.triggered():
             time.sleep(0.1)  # Add a short delay to avoid busy-waiting
 
         # Download the Power Trace
@@ -55,7 +55,7 @@ def generate_random_plaintext():
     return bytes([random.randint(0, 255) for _ in range(16)])
                     
 if __name__ == "_main_":
-    N = 10  # Adjust the value of N as needed
+    N = 1  # Adjust the value of N as needed
     encipher = EncipherAPI(port='/dev/ttyUSB0')  # Change port as needed
     scope = open_scope()  # Open the scope
     

@@ -1,8 +1,3 @@
-"""
-Perform Differential Power Analysis to disclose the secret key based on the power traces you recorded, as discussed in the lecture.
-Do not forget to annotate your implementation with comments and describe what you have been doing in the lab report.
-Plots depicting your analysis must be included in the Lab report.
-"""
 import pickle
 import numpy as np
 import matplotlib
@@ -30,7 +25,7 @@ SBOX = np.array([
     [0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf],
     [0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16]
 ])
-block_index = 5
+block_index = 1
 
 def last_significant_bit(value):
     return value & 0b1
@@ -113,7 +108,7 @@ def main():
         for file_index in range(1, 101):
             plaintexts, traces = read_collected_data(file_index)
 
-            for hyp_key in range(256):
+            for hyp_key in range(3):
                 for plaintext, trace in zip(plaintexts, traces):
                     plaintext_LSB_trace_clf(trace, plaintext, subset, hyp_key)
 
@@ -128,7 +123,7 @@ def main():
         print(f'[{t.strftime("%H:%M:%S")}] end collecting average...')
 
         key_res, max_val = -1, -1
-        for hyp_key in range(256):
+        for hyp_key in range(3):
             ave_sub0, ave_sub1 = read_ave_for_key_byte(hyp_key)
             _ave_sub0 = get_average(ave_sub0)
             _ave_sub1 = get_average(ave_sub1)

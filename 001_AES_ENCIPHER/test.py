@@ -1,8 +1,3 @@
-"""
-Perform Differential Power Analysis to disclose the secret key based on the power traces you recorded, as discussed in the lecture.
-Do not forget to annotate your implementation with comments and describe what you have been doing in the lab report.
-Plots depicting your analysis must be included in the Lab report.
-"""
 import pickle
 import numpy as np
 import matplotlib
@@ -12,7 +7,6 @@ from datetime import datetime
 matplotlib.use('TkAgg')
 import os
 
-'''transfer lists into numpy-lists, which quickens the process'''
 SBOX = np.array([
     [0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76],
     [0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0],
@@ -31,12 +25,9 @@ SBOX = np.array([
     [0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf],
     [0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16]
 ])
-'''set the desired key-byte, after running the program, the result will be written in "result.txt" and 
-as well as 256 plots for each hypothetic key are saved in "byte_*/plots/".'''
-block_index = 10 
+block_index = 5
 
 def last_significant_bit(value):
-    '''return lsb of one IR-byte'''
     return value & 0b1
 
 def lookup(byte):
@@ -73,18 +64,13 @@ def get_average(trace_set):
     return aves
 
 def read_collected_data(file_index):
-    # change the path of the data source
     with open(f'D:/backup_for_e/zabc_lab0/001_AES_ENCIPHER/data/collected_data_{file_index}.pkl', 'rb') as file:
         collected_data = pickle.load(file)
     plaintexts = np.array([entry['plaintext'] for entry in collected_data])
     traces = np.array([entry['power_trace'] for entry in collected_data])
     return plaintexts, traces
 
-
 def write_ave_for_key_byte(hyp_key, lsb, ave_sub):
-    '''to save all the collected data in lists are to challenged for my laptop.
-    solution: handle one source file each time and write the intermmediate average-value into key_*,pkl.
-    and in the end take the average of those sub-average values, which would be our final trace shown in the graph.'''
     file_path = f'byte_{block_index}/key_{hyp_key}.pkl'
     if not os.path.exists(file_path.split('/')[0]):
         os.makedirs(file_path.split('/')[0])
@@ -107,7 +93,6 @@ def read_ave_for_key_byte(hyp_key):
     return a0, a1
 
 def del_file(hyp_key):
-    '''to save space in the disk, delete all the temporary files'''
     try:
         os.remove(f'byte_{block_index}/key_{hyp_key}.pkl')
     except FileNotFoundError:

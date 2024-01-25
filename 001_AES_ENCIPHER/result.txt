@@ -2,3 +2,8 @@ the 2th key: 142.
 the 3th key: 224.
 the 4th key: 133.
 the 5th key: 214.
+the 6th key: 75.
+the 7th key: 203.
+the 8th key: 88.
+the 9th key: 165.
+the 10th key: 232.

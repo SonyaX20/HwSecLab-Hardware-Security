@@ -1,3 +1,5 @@
+the 0th key: 194.
+the 1th key: 80.
 the 2th key: 142.
 the 3th key: 224.
 the 4th key: 133.
@@ -7,3 +9,8 @@ the 7th key: 203.
 the 8th key: 88.
 the 9th key: 165.
 the 10th key: 232.
+the 11th key: 243.
+the 12th key: 213.
+the 13th key: 214.
+the 14th key: 224.
+the 15th key: 34.

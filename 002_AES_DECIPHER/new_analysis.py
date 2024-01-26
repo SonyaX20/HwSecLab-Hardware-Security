@@ -7,6 +7,13 @@ from datetime import datetime
 matplotlib.use('TkAgg')
 import os
 
+TRACE_NUM = 3600
+SAMPLE_NUM = 300000
+SAMPLE_BEGIN = 0
+BLOCK_NUM = 16
+KEY_GUESS_NUM =256
+FILE_NUM = 40
+
 reverse_aes_sbox = np.array([
     [0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb],
     [0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87, 0x34, 0x8e, 0x43, 0x44, 0xc4, 0xde, 0xe9, 0xcb],
@@ -52,6 +59,8 @@ def traces_correlation_plt(traces, key_guess, block_index):
     plt.xlabel('Sample Number')
     plt.ylabel('Power Value')
     plt.ylim(-2, 2)
+    cur_xticks = np.arange(0,30001,2000)
+    plt.xticks(ticks=cur_xticks,labels=cur_xticks+8000)
 
     file_path = f'byte_{block_index}'
     if not os.path.exists(file_path):
@@ -63,32 +72,45 @@ def traces_correlation_plt(traces, key_guess, block_index):
 def main():
 
     collected_data = []
-    key_res = np.zeros((16,256))
+    key_res = np.zeros((BLOCK_NUM,KEY_GUESS_NUM),dtype=np.uint8)
 
-    for i in range(40):        
-        file_path = f"D:/backup_for_e/0x00-files/lab-0x00/002_AES_DECIPHER/data_modified/collected_data_{str(i+1)}.pkl"
+    ciphertext_range = np.zeros((TRACE_NUM,BLOCK_NUM),dtype=np.uint8)
+    traces = np.zeros((TRACE_NUM,SAMPLE_NUM),dtype=np.float32)
+
+    pos = 0
+    for i in range(FILE_NUM):        
+        
+        if i == 7 or i == 11 or i == 12 or i == 18:
+            continue
+        # _modified_{SAMPLE_BEGIN}_{SAMPLE_BEGIN+SAMPLE_NUM}
+        file_path = f"D:/backup_for_e/0x00-files/lab-0x00/002_AES_DECIPHER/data/collected_data_{str(i+1)}.pkl"
         with open(file_path, 'rb') as file:
-            collected_data.extend(pickle.load(file))
+            collected_data = pickle.load(file)
+        
+        for j, entry in enumerate(collected_data):
+            ciphertext_range[pos*100+j,:]=entry['ciphertext']
+            traces[pos*100+j,:]=entry['power_trace']
+        collected_data.clear()
+        pos += 1
     
     '''instructions'''
-    print(f"finish reading collected data...")
-        # 检查所有数组的形状
-    for entry in collected_data:
-        print(len(entry['power_trace']))
+    t = datetime.now()
+    print(f'[{t.strftime("%H:%M:%S")}] finish reading collected data...')
 
     # Extract ciphertext values and traces from the loaded data
-    ciphertext_range = np.array([entry['ciphertext'] for entry in collected_data])
-    traces = np.array([entry['power_trace'] for entry in collected_data])
+    # ciphertext_range = np.array([entry['ciphertext'] for entry in collected_data])
+    # traces = np.array([entry['power_trace'] for entry in collected_data])
 
     # Generate all possible key guesses as bytes
-    key_guess_range = np.arange(256)
+    key_guess_range = np.arange(KEY_GUESS_NUM)
     key_guess_range_bytes = key_guess_range.astype(np.uint8)
     
     # CPA process
     for key_guess in key_guess_range_bytes:
         '''instruction...'''
-        print(f"start processing key guess: {key_guess}...")
-        hamming_power = np.zeros((4000,16))
+        t = datetime.now()
+        print(f'[{t.strftime("%H:%M:%S")}] start processing key guess: {key_guess}...')
+        hamming_power = np.zeros((TRACE_NUM,KEY_GUESS_NUM))
 
         # Calculate Hamming weight for each byte in the S-box lookup
         for i, ciphertext in enumerate(ciphertext_range):
@@ -97,27 +119,36 @@ def main():
             state = inverse_shift_rows(addroundkey_res)
             s_box_lookup = lookup(state)
             
-            for j in range(16):
+            for j in range(BLOCK_NUM-15):
                 hw_res = get_hamming_weight(s_box_lookup[j])
                 hamming_power[i,j] = hw_res
 
         '''instruction...'''
-        print(f"+++ finish HW collections(4000 traces, 6000 sample points)...")
+        t = datetime.now()
+        print(f'[{t.strftime("%H:%M:%S")}] +++ finish HW collections({TRACE_NUM} traces, {SAMPLE_NUM} sample points)...')
 
         # Process actual power array for each data point
         traces = traces.astype(np.float64)
-        for block in range(16):
+        for block in range(BLOCK_NUM-15):
             # Calculate Pearson coefficient between actual power and Hamming power
-            trace_res = [0]*6000
-            for sample_point in range(6000):
+            trace_res = [0]*SAMPLE_NUM
+            for sample_point in range(SAMPLE_NUM):
+
+                # '''debug'''
+                # import pdb; pdb.set_trace()
+                # print(f"trace:{traces.T[sample_point]}\n. HW:{hamming_power.T[block]}\n.")
+                # '''---'''
+
                 trace_res[sample_point] = calculate_pearson_coefficient(traces.T[sample_point], hamming_power.T[block])
+            
             traces_correlation_plt(trace_res, key_guess, block)
 
             key_res[block,key_guess] = max(trace_res)
 
         '''instruction...'''
-        print(f"+++ finish corr. calculation(16 key-bytes for aes-128)...")
-        print(f"+++ all figures saved...")
+        t = datetime.now()
+        print(f'[{t.strftime("%H:%M:%S")}] +++ finish corr. calculation(16 key-bytes for aes-128)...')
+        print(f'[{t.strftime("%H:%M:%S")}] +++ all figures saved...')
     
     for key_byte, row in enumerate(key_res):
         i = np.argmax(row)

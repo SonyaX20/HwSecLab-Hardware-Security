@@ -8,8 +8,8 @@ matplotlib.use('TkAgg')
 import os
 
 TRACE_NUM = 3600
-SAMPLE_NUM = 300000
-SAMPLE_BEGIN = 0
+SAMPLE_NUM = 3000
+SAMPLE_BEGIN = 18000
 BLOCK_NUM = 16
 KEY_GUESS_NUM =256
 FILE_NUM = 40
@@ -54,13 +54,14 @@ def calculate_pearson_coefficient(trace_set1, trace_set2):
     return np.corrcoef(trace_set1, trace_set2)[0, 1]
 
 def traces_correlation_plt(traces, key_guess, block_index):
+    plt.figure(figsize=(4, 5))
     plt.plot(traces)
     plt.title(f'CPA Plot - hypothetic key: {key_guess}')
     plt.xlabel('Sample Number')
     plt.ylabel('Power Value')
-    plt.ylim(-2, 2)
-    cur_xticks = np.arange(0,30001,2000)
-    plt.xticks(ticks=cur_xticks,labels=cur_xticks+8000)
+    plt.ylim(-1, 1)
+    cur_xticks = np.arange(0,3001,600)
+    plt.xticks(ticks=cur_xticks,labels=cur_xticks+SAMPLE_BEGIN)
 
     file_path = f'byte_{block_index}'
     if not os.path.exists(file_path):
@@ -82,8 +83,8 @@ def main():
         
         if i == 7 or i == 11 or i == 12 or i == 18:
             continue
-        # _modified_{SAMPLE_BEGIN}_{SAMPLE_BEGIN+SAMPLE_NUM}
-        file_path = f"D:/backup_for_e/0x00-files/lab-0x00/002_AES_DECIPHER/data/collected_data_{str(i+1)}.pkl"
+        
+        file_path = f"D:/backup_for_e/0x00-files/lab-0x00/002_AES_DECIPHER/data_modified_{SAMPLE_BEGIN}_{SAMPLE_BEGIN+SAMPLE_NUM}/collected_data_{str(i+1)}.pkl"
         with open(file_path, 'rb') as file:
             collected_data = pickle.load(file)
         

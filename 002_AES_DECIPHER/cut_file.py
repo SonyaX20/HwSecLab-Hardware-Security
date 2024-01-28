@@ -35,7 +35,14 @@ def check(sample_begin, sample_end):
                 print(f"{i,j}...")
         #     print(f"{i}th, len[cipher]:{len(entry['ciphertext'])}, len[trace]:{len(entry['power_trace'])}")
 
-# cut(18000,21000)
-check(18000,21000)
+cut(18000,21000)
+print('finished')
+cut(20000,23000)
+print('finished')
+cut(22000,25000)
+print('finished')
+cut(24000,27000)
+
+# check(18000,21000)
 
     

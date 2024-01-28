@@ -33,7 +33,7 @@ SBOX = np.array([
 ])
 '''set the desired key-byte, after running the program, the result will be written in "result.txt" and 
 as well as 256 plots for each hypothetic key are saved in "byte_*/plots/".'''
-block_index = 10 
+block_index = -1
 
 def last_significant_bit(value):
     '''return lsb of one IR-byte'''
@@ -116,6 +116,8 @@ def del_file(hyp_key):
         print(f"error:{e}...")
 
 def main():
+    global block_index
+    block_index = int(input("give the index of the desired key-bytes(0 to 15):"))
     ave_sub0, ave_sub1 = [], []
     subset = {'subset0': [], 'subset1': []}
 
@@ -155,7 +157,7 @@ def main():
             print(f'[{t.strftime("%H:%M:%S")}] end for key-byte:{block_index}; key-guess:{hyp_key}...')
 
         with open(f'result.txt', 'a') as f:
-            f.write(f"the {block_index}th key: {key_res}.\n")
+            f.write(f"the {block_index}th key: {hex(key_res)}.\n")
     except KeyboardInterrupt:
         return
 

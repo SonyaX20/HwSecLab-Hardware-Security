@@ -1,5 +1,6 @@
 inverse_key_expansion.py
 key_expansion.py
 select_plots.py
+trans_hex.py
 byte_*/ 
 plots/

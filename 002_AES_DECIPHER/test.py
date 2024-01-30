@@ -114,6 +114,8 @@ def main():
     # Generate all possible key guesses as bytes
     key_guess_range = np.arange(KEY_GUESS_NUM)
     key_guess_range_bytes = key_guess_range.astype(np.uint8)
+
+    key_guess_range_bytes = [78]
     
     # CPA process
     for key_guess in key_guess_range_bytes:

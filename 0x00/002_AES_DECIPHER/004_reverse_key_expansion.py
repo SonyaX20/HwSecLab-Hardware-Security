@@ -1,5 +1,8 @@
+"""
+trace back the first round key
+"""
 def aes_inv_key_expansion(final_key):
-    # 逆向AES-128 key expansion
+    # reverse AES-128 key expansion
     round_constants = [0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36]
 
     key_words = [final_key[i:i+4] for i in range(0, len(final_key), 4)]    
@@ -7,7 +10,7 @@ def aes_inv_key_expansion(final_key):
 
     for i in range(0,40):
         temp = key_words[i][:]
-        print(key_words)
+        # print(key_words)
 
         if i % 4 == 0:
             for j in range(4):
@@ -15,18 +18,18 @@ def aes_inv_key_expansion(final_key):
                     temp[j] ^= round_constants[i//4 - 1]
 
                 temp[j] = aes_inv_sub_byte(temp[j])  # InvSubWord
-        print(key_words)
+        # print(key_words)
         for j in range(4):
             temp[j] ^= key_words[i+3][j]
 
         key_words.append(temp)
-        print(f"current keyword:{key_words}")
+        # print(f"current keyword:{key_words}")
 
     key_words = key_words[::-1]
     return [word for sublist in key_words for word in sublist]
 
 def aes_inv_sub_byte(byte):
-    # 逆向AES SubByte 操作
+    # reverse AES SubByte
     inv_s_box = [
         0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38,
         0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb,
@@ -66,10 +69,10 @@ def aes_inv_sub_byte(byte):
 
 
 # Example usage with a 16-byte final key
-final_key = [24, 98, 154, 176, 
-             253, 209, 13, 58, 
-             181, 239, 51, 39, 
-             87, 92, 72, 241]
+final_key = [0x4e, 0x54, 0x5c, 0xd7, 
+             0xcf, 0xfa, 0x97, 0x2d, 
+             0xf1, 0x42, 0x75, 0x97, 
+             0x1d, 0x95, 0x3f, 0x0d]
 
 # Inverse Key expansion
 inverse_expanded_keys = aes_inv_key_expansion(final_key)

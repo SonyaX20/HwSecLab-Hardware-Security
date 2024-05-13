@@ -14,3 +14,6 @@
 14th key-byte: 0x95.
 15th key-byte: 0x3f.
 16th key-byte: 0x0d.
+
+After reverse key expansion:
+2a c3 0b db fe e2 7f 07 b0 3b e6 93 73 1a b7 86

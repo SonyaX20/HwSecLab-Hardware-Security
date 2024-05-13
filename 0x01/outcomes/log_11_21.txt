@@ -1,0 +1,201 @@
+------width:11-11 offset:2000-3999
+offset:2190 width:11 crashed
+offset:2328 width:11 crashed
+offset:2371 width:11 crashed
+offset:2495 width:11 crashed
+offset:2507 width:11 crashed
+offset:2717 width:11 crashed
+offset:2917 width:11 crashed
+offset:2926 width:11 crashed
+offset:2976 width:11 crashed
+offset:3410 width:11 crashed
+offset:3574 width:11 crashed
+------width:12-12 offset:2000-3999
+offset:2061 width:12 crashed
+offset:2115 width:12 crashed
+offset:2169 width:12 crashed
+offset:2202 width:12 crashed
+offset:2331 width:12 crashed
+offset:2434 width:12 crashed
+offset:3163 width:12 crashed
+offset:3167 width:12 crashed
+offset:3174 width:12 crashed
+offset:3237 width:12 crashed
+offset:3608 width:12 crashed
+offset:3648 width:12 crashed
+offset:3654 width:12 crashed
+offset:3851 width:12 crashed
+offset:3887 width:12 crashed
+------width:13-13 offset:2000-3999
+offset:2017 width:13 crashed
+offset:2048 width:13 crashed
+offset:2175 width:13 crashed
+offset:2261 width:13 crashed
+offset:2328 width:13 crashed
+offset:2332 width:13 crashed
+offset:2555 width:13 crashed
+offset:2675 width:13 crashed
+offset:2937 width:13 crashed
+offset:2959 width:13 crashed
+offset:3260 width:13 crashed
+offset:3430 width:13 crashed
+offset:3504 width:13 crashed
+offset:3657 width:13 crashed
+offset:3704 width:13 crashed
+offset:3827 width:13 crashed
+offset:3844 width:13 crashed
+offset:3867 width:13 crashed
+------width:14-14 offset:2000-3999
+offset:2026 width:14 crashed
+offset:2060 width:14 crashed
+offset:2122 width:14 crashed
+offset:2188 width:14 crashed
+*** offset:2239 width:14 authorized
+*** offset:2240 width:14 authorized
+*** offset:2241 width:14 authorized
+*** offset:2242 width:14 authorized
+*** offset:2243 width:14 authorized
+*** offset:2244 width:14 authorized
+*** offset:2245 width:14 authorized
+*** offset:2246 width:14 authorized
+*** offset:2247 width:14 authorized
+*** offset:2248 width:14 authorized
+*** offset:2249 width:14 authorized
+*** offset:2250 width:14 authorized
+*** offset:2251 width:14 authorized
+*** offset:2252 width:14 authorized
+*** offset:2253 width:14 authorized
+*** offset:2254 width:14 authorized
+*** offset:2255 width:14 authorized
+*** offset:2256 width:14 authorized
+*** offset:2257 width:14 authorized
+*** offset:2258 width:14 authorized
+*** offset:2259 width:14 authorized
+*** offset:2260 width:14 authorized
+*** offset:2261 width:14 authorized
+*** offset:2262 width:14 authorized
+*** offset:2263 width:14 authorized
+*** offset:2264 width:14 authorized
+*** offset:2265 width:14 authorized
+*** offset:2266 width:14 authorized
+*** offset:2267 width:14 authorized
+*** offset:2268 width:14 authorized
+*** offset:2269 width:14 authorized
+*** offset:2270 width:14 authorized
+*** offset:2271 width:14 authorized
+*** offset:2272 width:14 authorized
+*** offset:2273 width:14 authorized
+offset:2338 width:14 crashed
+offset:2401 width:14 crashed
+offset:2434 width:14 crashed
+offset:2587 width:14 crashed
+offset:2791 width:14 crashed
+offset:3075 width:14 crashed
+offset:3183 width:14 crashed
+offset:3681 width:14 crashed
+offset:3757 width:14 crashed
+offset:3897 width:14 crashed
+------width:15-15 offset:2000-3999
+offset:2071 width:15 crashed
+offset:2202 width:15 crashed
+offset:2373 width:15 crashed
+offset:2387 width:15 crashed
+offset:2587 width:15 crashed
+offset:2591 width:15 crashed
+offset:2731 width:15 crashed
+offset:3174 width:15 crashed
+offset:3192 width:15 crashed
+offset:3288 width:15 crashed
+offset:3538 width:15 crashed
+offset:3561 width:15 crashed
+offset:3654 width:15 crashed
+offset:3674 width:15 crashed
+offset:3934 width:15 crashed
+offset:3939 width:15 crashed
+------width:16-16 offset:2000-3999
+offset:2060 width:16 crashed
+offset:2140 width:16 crashed
+offset:2416 width:16 crashed
+offset:2420 width:16 crashed
+offset:2544 width:16 crashed
+offset:2605 width:16 crashed
+offset:2659 width:16 crashed
+offset:2729 width:16 crashed
+offset:3469 width:16 crashed
+offset:3530 width:16 crashed
+offset:3571 width:16 crashed
+offset:3807 width:16 crashed
+offset:3827 width:16 crashed
+------width:17-17 offset:2000-3999
+offset:2110 width:17 crashed
+offset:2175 width:17 crashed
+offset:2371 width:17 crashed
+offset:2382 width:17 crashed
+offset:2621 width:17 crashed
+offset:2654 width:17 crashed
+offset:3074 width:17 crashed
+offset:3077 width:17 crashed
+offset:3193 width:17 crashed
+offset:3262 width:17 crashed
+offset:3354 width:17 crashed
+offset:3472 width:17 crashed
+offset:3528 width:17 crashed
+offset:3660 width:17 crashed
+offset:3752 width:17 crashed
+offset:3821 width:17 crashed
+offset:3892 width:17 crashed
+------width:18-18 offset:2000-3999
+offset:2045 width:18 crashed
+offset:2122 width:18 crashed
+offset:2130 width:18 crashed
+offset:2184 width:18 crashed
+offset:2432 width:18 crashed
+offset:2577 width:18 crashed
+offset:2656 width:18 crashed
+offset:2661 width:18 crashed
+offset:2824 width:18 crashed
+offset:2934 width:18 crashed
+offset:3067 width:18 crashed
+offset:3145 width:18 crashed
+offset:3309 width:18 crashed
+offset:3752 width:18 crashed
+offset:3957 width:18 crashed
+------width:19-19 offset:2000-3999
+offset:2190 width:19 crashed
+offset:2204 width:19 crashed
+offset:2265 width:19 crashed
+offset:2337 width:19 crashed
+offset:2364 width:19 crashed
+offset:2422 width:19 crashed
+offset:2557 width:19 crashed
+offset:2579 width:19 crashed
+offset:2698 width:19 crashed
+offset:2889 width:19 crashed
+offset:2941 width:19 crashed
+------width:20-20 offset:2000-3999
+offset:2174 width:20 crashed
+offset:2175 width:20 crashed
+offset:2201 width:20 crashed
+offset:2661 width:20 crashed
+offset:2775 width:20 crashed
+offset:2810 width:20 crashed
+offset:2818 width:20 crashed
+------width:21-21 offset:2000-3999
+offset:2043 width:21 crashed
+offset:2044 width:21 crashed
+offset:2055 width:21 crashed
+offset:2060 width:21 crashed
+offset:2188 width:21 crashed
+offset:2222 width:21 crashed
+offset:2377 width:21 crashed
+offset:2407 width:21 crashed
+offset:2480 width:21 crashed
+offset:2633 width:21 crashed
+offset:2927 width:21 crashed
+offset:3097 width:21 crashed
+offset:3211 width:21 crashed
+offset:3440 width:21 crashed
+offset:3591 width:21 crashed
+offset:3631 width:21 crashed
+offset:3707 width:21 crashed
+offset:3751 width:21 crashed

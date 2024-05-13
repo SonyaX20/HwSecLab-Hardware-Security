@@ -2,3 +2,6 @@ select_plots.py
 trans_hex.py
 byte_*/ 
 plots/
+.DS_Store
+.idea/
+*.lock*

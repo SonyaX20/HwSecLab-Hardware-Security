@@ -1,0 +1,117 @@
+*** offset:2239 width:14 authorized
+Seeds requested being:
+tail
+stand
+wait
+vessel
+tonight
+turtle
+step
+nest
+shop
+cruel
+example
+utility
+stomach
+hen
+piece
+brisk
+neglect
+glue
+fatigue
+hurt
+creek
+evoke
+keen
+
+
+-------status
+offset:2207 width:14 crashed
+offset:2208 width:14 crashed
+offset:2265 width:14 crashed
+offset:2270 width:14 crashed
+offset:2292 width:14 crashed
+offset:2263 width:14 crashed
+offset:2207 width:14 crashed
+offset:2298 width:14 crashed
+offset:2265 width:14 crashed
+offset:2265 width:14 crashed
+offset:2266 width:14 crashed
+offset:2219 width:14 crashed
+offset:2213 width:14 crashed
+offset:2248 width:14 crashed
+offset:2206 width:14 crashed
+offset:2219 width:14 crashed
+offset:2248 width:14 crashed
+offset:2267 width:14 crashed
+offset:2291 width:14 crashed
+offset:2203 width:14 crashed
+offset:2267 width:14 crashed
+offset:2265 width:14 crashed
+offset:2265 width:14 crashed
+*** offset:2239 width:14 authorized
+Seeds requested being:
+tail
+stand
+wait
+vessel
+tonight
+turtle
+step
+nest
+shop
+cruel
+example
+utility
+stomach
+hen
+piece
+brisk
+neglect
+glue
+fatigue
+hurt
+creek
+evoke
+keen
+
+*** offset:2240 width:14 authorized
+*** offset:2241 width:14 authorized
+*** offset:2242 width:14 authorized
+*** offset:2243 width:14 authorized
+*** offset:2244 width:14 authorized
+*** offset:2245 width:14 authorized
+*** offset:2246 width:14 authorized
+*** offset:2247 width:14 authorized
+*** offset:2248 width:14 authorized
+*** offset:2249 width:14 authorized
+*** offset:2250 width:14 authorized
+*** offset:2251 width:14 authorized
+*** offset:2252 width:14 authorized
+*** offset:2253 width:14 authorized
+*** offset:2254 width:14 authorized
+*** offset:2255 width:14 authorized
+*** offset:2256 width:14 authorized
+*** offset:2257 width:14 authorized
+*** offset:2258 width:14 authorized
+*** offset:2259 width:14 authorized
+*** offset:2260 width:14 authorized
+*** offset:2261 width:14 authorized
+*** offset:2262 width:14 authorized
+*** offset:2263 width:14 authorized
+*** offset:2264 width:14 authorized
+*** offset:2265 width:14 authorized
+*** offset:2266 width:14 authorized
+*** offset:2267 width:14 authorized
+*** offset:2268 width:14 authorized
+*** offset:2269 width:14 authorized
+*** offset:2270 width:14 authorized
+*** offset:2271 width:14 authorized
+*** offset:2272 width:14 authorized
+*** offset:2273 width:14 authorized
+offset:2247 width:14 crashed
+offset:2226 width:14 crashed
+offset:2227 width:14 crashed
+offset:2292 width:14 crashed
+offset:2293 width:14 crashed
+offset:2226 width:14 crashed
